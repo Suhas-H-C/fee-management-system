@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="/user/base::myCommon(~{::section},${user},${title})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 offset-md-1 mt-3">
+
+					<div class="card bg-white text-dark mb-3">
+						<h3 class="text-capitalize text-center"
+							style="font-family: Franklin Gothic Medium; letter-spacing: 2px">add
+							new student</h3>
+					</div>
+
+					<form novalidate th:action="@{/user/adding}" class="bg-white p-5"
+						method="post" th:object="${added}">
+
+						<div class="form-group input-group mb-3">
+							<span
+								class="input-group-text font-weight-bold bg-dark mr-2 text-white w-25">First
+								Name </span> <input type="text" class="form-control" id="first_name"
+								name="firstname" th:value="${added.firstname}">
+						</div>
+
+						<div class="form-group input-group mb-3">
+							<span
+								class="input-group-text font-weight-bold bg-dark mr-2 text-white  w-25">Last
+								Name</span> <input type="text" class="form-control" id="last_name"
+								name="lastname" th:value="${added.lastname}">
+
+						</div>
+
+						<div class="form-group input-group mb-3">
+							<span
+								class="input-group-text font-weight-bold bg-dark mr-2 text-white w-25">Age</span>
+							<input type="number" class="form-control" id="age" name="age"
+								th:value="${added.age}">
+						</div>
+
+						<div class="form-group input-group mb-3">
+							<span
+								class="input-group-text font-weight-bold bg-dark mr-2 text-white w-25">Address</span>
+							<input type="text" class="form-control" id="address"
+								name="address" th:value="${added.address}">
+						</div>
+
+						<div class="form-group input-group mb-3">
+							<span
+								class="input-group-text font-weight-bold bg-dark mr-2 text-white w-25">Fee
+								Paid</span> <input type="number" class="form-control" id="fee_paid"
+								name="feepaid" th:value="${added.feepaid}">
+						</div>
+
+						<div class="form-group input-group mb-3">
+							<span
+								class="input-group-text font-weight-bold bg-dark mr-2 text-white w-25">Fee
+								Due</span> <input type="number" class="form-control" id="fee_due"
+								name="feedue" th:value="${added.feedue}">
+						</div>
+
+						<div class="container text-center">
+							<button type="submit"
+								class="btn btn-primary w-25 font-weight-bold">Add</button>
+							<button type="reset" class="btn btn-danger w-25 font-weight-bold">Clear</button>
+						</div>
+
+						<div th:if="${condition}"
+							th:classappend="${condition}? 'alert alert-success mt-2 text-center font-weight-bold ml-5 mr-5':''"
+							th:text="${msg}"></div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

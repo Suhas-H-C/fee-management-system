@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="myCommon(content,object,title)">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/myStyle.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+	integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title th:text="${title}"></title>
+</head>
+<body class="mybg">
+	<nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/user/userdashboard}"><img
+			src="https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927__340.png"
+			alt="logo" style="width: 60px;"> <span
+			class="ml-4 font-weight-bold text-capitalize"
+			style="font-family: Arial Narrow">student data manager</span></a>
+
+		<div class="collapse navbar-collapse navbar-sm" id="collapsibleNavbar">
+			<ul class="navbar-nav ml-auto text-uppercase">
+				<li id="li" class="nav-item ml-2"><a class="nav-link" href=""
+					th:href="@{/user/userdashboard}"><em class="fas fa-home"
+						style="font-size: 25px;"></em></a></li>
+
+				<li id="li" class="nav-item ml-4"><a
+					class="nav-link text-white" style="font-size: 18px;" href="#">Welcome
+						<span th:text="${user}"></span>
+				</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="sidebar">
+		<span onclick="toogleSidebar()" class="crossBtn">&times;</span> <a
+			th:href="@{/user/userdashboard}" class="item"><em
+			class="fas fa-grip-horizontal"></em> Dashboard</a> <a
+			th:href="@{/user/viewstudents}" class="item"><em
+			class="fas fa-binoculars"></em> ViewStudents</a> <a
+			th:href="@{/user/addstudents}" class="item"><em
+			class="fas fa-user-plus"></em> Add Students</a> <a
+			th:href="@{/user/updatestudents}" class="item"><em
+			class="fas fa-user-edit"></em> Update Students</a> <a
+			th:href="@{/user/showme}" class="item"><em
+			class="fas fa-user-circle"></em> My Profile</a> <a
+			th:href="@{/user/remove}" class="item"><em class="fas fa-trash"></em>
+			Remove Student</a> <a th:href="@{/logout}" class="item font-weight-bold"><em
+			class="fas fa-sign-out-alt"></em> Logout</a>
+		<div class="divider"></div>
+	</div>
+
+	<div class="content">
+		<em onclick="toogleSidebar()" class="fas fa-bars"></em>
+		<div th:replace="${content}"></div>
+
+	</div>
+	<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

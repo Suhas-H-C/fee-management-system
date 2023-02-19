@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::myCommon(~{::section},${title})">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" th:href="@{/css/myStyle.css}" />
+<title></title>
+</head>
+<body>
+
+	<section
+		class="banner d-flex justify-content-center align-items-center">
+		<div class="text-center">
+			<h3 class="text-capitalize font-weight-bold">welcome to smart student manager</h3>
+			<p><em>Please login to confirm the identity for accessibility</em></p>
+			<form th:action="@{/signin}">
+				<button type="submit" value="Get Started"
+					class="btn btn-outline-primary btn-lg font-weight-bold text-capitalize">Get started</button>
+			</form>
+		</div>
+	</section>
+
+</body>
+</html>

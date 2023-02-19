@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="myCommon(content,title)">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/myStyle.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+	integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title th:text="${title}"></title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}"><img
+			src="https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927__340.png"
+			alt="logo" style="width: 60px;"> <span
+			class="ml-3 font-weight-bold text-capitalize"
+			style="font-size: 20px;">student data manager</span></a>
+
+		<div class="collapse navbar-collapse navbar-sm" id="collapsibleNavbar">
+			<ul class="navbar-nav ml-auto text-uppercase font-weight-bold"
+				style="font-size: 20px;">
+				<li id="li" class="nav-item mr-3"><a class="nav-link" href=""
+					th:href="@{/}">Home</a></li>
+				<li id="li" class="nav-item mr-3"><a class="nav-link"
+					th:href="@{/signin}">Login</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div th:replace="${content}"></div>
+	<footer class="bg-dark text-center text-white">
+	
+		<div class="container p-1 pb-0">
+			<section class="mb-2">
+				<a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" target="_blank"
+					role="button"><em class="fab fa-twitter"></em></a>
+
+				<a class="btn btn-outline-light btn-floating m-1" href="https://google.com/" target="_blank"
+					role="button"><em class="fab fa-google"></em></a>
+
+				<a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.com/" target="_blank"
+					role="button"><em class="fab fa-linkedin-in"></em></a>
+	
+				<a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" target="_blank"
+					role="button"><em class="fab fa-github"></em></a>
+			</section>		
+		</div>
+	
+		<div class="text-center p-3"
+			style="background-color: rgba(0, 0, 0, 0.2);">
+			<em class="far fa-copyright"></em> 2021 Copyright: <a class="text-white"
+				href="#">Suhas.com</a>
+		</div>
+
+	</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="/user/base::myCommon(~{::section},${user},${title})">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<section>
+
+		<div class="container bg-white">
+			<div class="jumbotron bg-white">
+				<div class="container">
+					<h1 class="font-weight-bold" style="font-family: Book Antiqua">Welcome
+						to Smart Student Data Manager</h1>
+					<p class="lead text-right" style="font-family: Tempus Sans ITC">Applies
+						user modifications for Student records</p>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="display-4">View Current List</h1>
+					<p class="lead">Displays all student records from the database</p>
+					<hr class="m-y-md">
+					<p class="lead">
+						<a class="btn btn-success btn-lg font-weight-bold"
+							th:href="@{/user/viewstudents}" role="button">View Now</a>
+					</p>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="display-4">Add to Current List</h1>
+					<p class="lead">Adds a new record to the students database</p>
+					<hr class="m-y-md">
+					<p class="lead">
+						<a class="btn btn-primary btn-lg font-weight-bold"
+							th:href="@{/user/addstudents}" role="button">Add Now</a>
+					</p>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="display-4">Update student data</h1>
+					<p class="lead">Modifies student informations</p>
+					<hr class="m-y-md">
+					<p class="lead">
+						<a class="btn btn-secondary btn-lg font-weight-bold"
+							th:href="@{/user/updatestudents}" role="button">Update Now</a>
+					</p>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="display-4">Remove student</h1>
+					<p class="lead">Permanently removes a student from existing
+						students record</p>
+					<hr class="m-y-md">
+					<p class="lead">
+						<a class="btn btn-danger btn-lg font-weight-bold"
+							th:href="@{/user/remove}" role="button">Remove Now</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

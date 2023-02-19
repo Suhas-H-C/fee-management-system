@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="/user/base::myCommon(~{::section},${user},${title})">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" th:href="@{/css/myStyle.css}" />
+<title></title>
+</head>
+<body>
+	<section>
+
+		<div class="card mr-3 ml-3">
+			<div class="car-body">
+
+				<h1 class="text-center">Current Students List</h1>
+
+				<table class="table table-hover table-sm">
+					<caption>Currently enrolled students</caption>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">First Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">Age</th>
+						<th scope="col">Fee Paid</th>
+						<th scope="col">Fee Due</th>
+						<th scope="col">Address</th>
+					</tr>
+
+					<tr th:each="e:${all}">
+						<th scope="row" th:text="${e.id}"></th>
+						<td th:text="${e.firstname}"></td>
+						<td th:text="${e.lastname}"></td>
+						<td th:text="${e.age}"></td>
+						<td th:text="${e.feepaid}"></td>
+						<td th:text="${e.feedue}"></td>
+						<td th:text="${e.address}"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>
